@@ -1,0 +1,623 @@
+$bg: white;
+$pink: #FF1D55;
+$yellow: #FFD41A;
+$aqua: #00E2AA;
+$purple: #B90CB4;
+$orange: #FF3400;
+$turquoise: #30B7E2;
+$navy: #220054;
+
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 656px;
+  min-width: 1356px;
+}
+
+* {
+  font-family: Lato;
+  text-align: center;
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.welcome-page{
+    position: relative;
+    color: black;
+    text-transform: uppercase;
+    width: 100%;
+    margin-left: 15%;
+    font-weight: bold;
+    word-spacing: 5px;
+    
+  h1{
+    font-size: 100px;
+    margin-top: 150px;
+    margin-bottom: 0px;
+    color: $pink;
+  }
+  h2{
+    font-size: 32px;
+    color: $turquoise;
+  }
+  span{
+    font-size: 22px;
+    color: $navy;
+  }
+  p{
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: $navy;
+  }
+}
+
+.wrap .page {
+  position: relative;
+  height: 100%;
+  min-height: 656px;
+  overflow: hidden;
+  background: url('../images/pagewall.jpg');
+  transition: 0.2s ease-in;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.wrap .page:before {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  right: -150px;
+  top: 27%;
+  border-radius: 50%;
+  z-index: 1000;
+}
+.wrap .page:after{
+  content: '';
+  background: url('../images/light-bulb.svg');
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: block;
+  z-index: 1000;
+  right: 40px;
+  top: 42.3%;
+  transform: rotate(-90deg);
+}
+.wrap .page .click-slide {
+  position: absolute;
+  top: 36%;
+  background: transparent;
+  width: 200px;
+  height: 80px;
+  cursor: pointer;
+  transform: rotate(-90deg);
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  z-index: 1000;
+}
+
+#one {
+  position: absolute;
+  width: 18%;
+
+  &:before {
+    background: $pink;
+  }
+  
+  p {
+    right: -103px;
+  }
+
+  #section1{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 11%;
+    padding-left: 70px;
+    color: black;
+    display: none;
+    transition: 0.2s ease-in;
+    text-transform: uppercase;
+  }
+  #section1 img{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border: 1px solid $pink;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  h1{
+    color: $pink;
+    font-size: 20px;
+  }
+  h2{
+    color: grey;
+    font-size: 18px;
+  }
+
+  #section1 p{
+    color: grey;
+    text-transform: none;
+    line-height: 1.4;
+    font-size: 16px;
+    margin: 0 300px;
+  }
+
+  .zoomIn{
+    animation-delay: 0.3s;
+  }
+
+  .fadeInUp{
+    animation-delay: 1s;
+  }
+
+}
+
+.wrap #two {
+  position: absolute;
+  width: 15%;
+
+  &:before {
+    background: $yellow;
+  }
+
+  p {
+    right: -103px;
+  }
+
+  #section2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+  .grid-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 20%;
+    display: flex;
+    align-items: center;
+  }
+  .calender-wrap{
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0 5%;
+  }
+  #section2 span{
+    position: absolute;
+    background: $orange;
+    width: 100%;
+    height: 40%;
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: $bg;
+    left: 0;
+    top: -55px;
+  }
+  #section2 .grid-wrap div:first-child span{
+    background: $turquoise;
+  }
+  #section2 .grid-wrap div:last-child span{
+    background: $purple;
+  }
+  #section2 .calender{
+    position: relative;
+    z-index: 1;
+  }
+  .box {
+    width:180px;
+    height:300px;
+    background: radial-gradient(circle at top, transparent 15%, white 16%);
+    border-radius: 0 0 10px 10px;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.6));
+  }
+  
+  #section2 h1{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    left: 0%;
+    font-size: 18px;
+    color: $orange;
+    text-transform: uppercase;
+  }
+  #section2 p{
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 0%;
+  }
+ 
+  #section2 .calender-wrap:first-child h1{
+    color: $turquoise;
+  }
+  #section2 .calender-wrap:last-child h1{
+    color: $purple;
+  }
+  #section2 .calender-wrap img{
+    position: absolute;
+    top: 63%;
+    left: 30%;
+    width: 70px;
+    height: 70px;
+  }
+
+}
+
+.wrap #three {
+  position: absolute;
+  width: 12%;
+
+  &:before {
+    background: $aqua;
+  }
+
+  p {
+    right: -100px;
+  }
+  #section3{
+    position: relative;
+    padding: 10% 10%;
+    margin-left: 10%;
+    display: none;
+  }
+  div{
+    position: relative;
+    float: left;
+    margin: 50px;
+    text-transform: uppercase;
+  }
+  #section3 img{
+    position: relative;
+    width: 100px;
+  }
+  #section3 span{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 43%;
+    left: 46%;
+    border-radius: 50%;
+    background: $yellow;
+  }
+  #section3 .grey-line{
+    position: absolute;
+    width: 0px;
+    height: 2px;
+    margin-left: 100px;
+    margin-top: 18px;
+    animation-name: expand;
+    animation-fill-mode: forwards;
+    background: #c2c1c1;
+  }
+  
+  #section3 div:first-child div{
+    animation-delay: 2.5s;
+    animation-duration: 1.2s;
+  }
+  #section3 div:nth-child(2) div{
+    animation-delay: 4.2s;
+    animation-duration: 1.2s;
+  }
+  @keyframes expand{
+    0% {width: 0px;}
+    100% {width: 290px;}
+  }
+  #section3 div:first-child span{
+    background: $aqua;
+  }
+  #section3 div:last-child span{
+    background: $pink;
+  }
+  div:first-child h1{
+    color: $aqua;
+  }
+  div:last-child h1{
+    color: $pink;
+  }
+  div h1{
+    color: $yellow;
+    margin-top: 40px;
+  }
+  h3{
+    color: $navy;
+    cursor: pointer;
+  }
+  #section3 p{
+    text-transform: none;
+  }
+  .fadeInDown{
+     animation-delay: 0.7s;
+  }
+  .fadeInUp{
+     animation-delay: 0.7s;
+  }
+}
+
+.wrap #four {
+  position: absolute;
+  width: 9%;
+
+  &:before {
+    background: $purple;
+  }
+
+  p {
+    right: -103px;
+  }
+  #section4{
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 2%;
+    top: 18%;
+    display: none;
+    color: black;
+    text-transform: uppercase;
+  }
+  div{
+    display: inline-block;
+    width: 20%;
+    margin: 30px;
+  }
+  #section4 span{
+    position: absolute;
+    width: 35px;
+    height: 30px;
+    color: $bg;
+    padding-top: 8px;
+    font-weight: bold;
+    margin-top: 17px;
+    margin-left: 10px;
+    border-radius: 50%;
+    background: $purple;
+    z-index: 100;
+  }
+  #section4 div:first-child span{
+    background: $orange;
+  }
+  #section4 div:last-child span{
+    background: $turquoise;
+  }
+  img{
+    width: 180px;
+    height: 180px;
+    border: 7px solid $purple;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  div:first-child img{
+    border-color: $orange;
+  }
+  div:last-child img{
+    border-color: $turquoise;
+  }
+  h1{
+    color: $purple;
+    font-size: 20px;
+    word-spacing: 4px;
+    cursor: pointer;
+  }
+  div:first-child h1{
+    color: $orange;
+  }
+  div:last-child h1{
+    color: $turquoise
+  }
+  h2{
+    color: grey;
+    font-size: 17px;
+    word-spacing: 2px;
+  }
+  #section4 p{
+    color: grey;
+    text-transform: none;
+    line-height: 1.4;
+    font-size: 16px;
+    margin-top: -8px;
+  }
+  .zoomIn{
+    animation-delay: 1.5s;
+  }
+  .fadeInDown{
+    animation-delay: 2.5s;
+  }
+  .fadeInUp{
+    animation-delay: 2.5s;
+  }
+  #section4 img {
+    transform: scale(0);
+    animation: zoomin 0.5s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes zoomin{
+    0%{transform: scale(0)};
+    100%{transform: scale(1)};
+  }
+}
+
+.wrap #five {
+  position: absolute;
+  width: 6%;
+
+  &:before {
+    background: $orange;
+  }
+  p {
+    right: -103px;
+  }
+  #section5{
+    position: relative;
+    width: 100%;
+    display: none;
+  }
+  ul{
+    position: relative;
+    width: 80%;
+    left: 13%;
+    margin-top: 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    text-align: left;
+  }
+  li{
+    width: 60%;
+    margin: 10px 0;
+  }
+  div{
+    position: relative;
+    width: 90%;
+    margin-left: 70px;
+    cursor: pointer;
+  }
+  h1{
+    font-size: 18px;
+    margin: 0;
+  }
+  #section5 p{
+    margin-top: 7px;
+    font-size: 15px;
+   }
+  img{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 50%;
+    float: left;
+  }
+  li:nth-child(1) img{
+    background: $pink;
+  }
+  li:nth-child(2) img{
+    background: $purple;
+  }
+  li:nth-child(3) img{
+    background: $yellow;
+  }
+  li:nth-child(4) img{
+    background: $orange;
+  }
+  li:nth-child(5) img{
+    background: $navy;
+  }
+  li:nth-child(6) img{
+    background: $turquoise;
+  }
+  li:nth-child(7) img{
+    background: $aqua;
+  }
+  li:nth-child(8) img{
+    background: black;
+  }
+  .bounceInLeft{
+    animation-delay: 0.3s;
+  }
+  .bounceInRight{
+    animation-delay: 0.3s;
+  }
+  .bounceInUp{
+    animation-delay: 1s;
+  }
+  .bounceInDown{
+    animation-delay: 1s;
+  }
+}
+
+.wrap #six {
+  position: absolute;
+  width: 3%;
+  
+  &:before {
+    background: $turquoise;
+  }
+  p {
+    right: -102px;
+  }
+  #section6{
+    position: relative;
+    top: 8%;
+    width: 70%;
+    left: 14%;
+    display: none;
+  }
+  .content-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: red;
+  }
+  h2{
+    position: relative;
+    margin: 40px 160px;
+  }
+  ul{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+  li{
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
+  }
+  img{
+    width: 30px;
+    padding: 10px;
+    border-radius: 20%;
+    cursor: pointer;
+  }
+  li:nth-child(1) img{
+    background: $pink;
+  }
+  li:nth-child(2) img{
+    background: $turquoise;
+  }
+  li:nth-child(3) img{
+    background: $orange;
+  }
+  li:nth-child(4) img{
+    background: $navy;
+  }
+  #section6 h2{
+    transform: scale(0);
+    animation-name: zoomin;
+    animation-delay: 0.3s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes zoomin{
+    0%{transform: scale(0)};
+    100%{transform: scale(1)};
+  }
+  .bounceInLeft{
+    animation-delay: 0.5s;
+  }
+  .bounceInRight{
+    animation-delay: 0.5s;
+  }
+}
+
+.fullWidth{
+  width: 100% !important;
+}
