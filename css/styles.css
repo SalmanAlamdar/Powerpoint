@@ -1,3 +1,9 @@
+.wrap #two .grid-wrap, .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,7 +20,9 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -53,7 +61,10 @@ body {
   min-height: 656px;
   overflow: hidden;
   background: url("../images/pagewall.jpg");
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
   z-index: 100;
 }
@@ -79,6 +90,8 @@ body {
   z-index: 1000;
   right: 40px;
   top: 42.3%;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 
@@ -89,6 +102,8 @@ body {
   width: 200px;
   height: 80px;
   cursor: pointer;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
   font-size: 25px;
   font-weight: bold;
@@ -114,6 +129,8 @@ body {
   padding-left: 70px;
   color: black;
   display: none;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
   text-transform: uppercase;
 }
@@ -141,9 +158,11 @@ body {
   margin: 0 300px;
 }
 #one .zoomIn {
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 #one .fadeInUp {
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 
@@ -168,7 +187,8 @@ body {
   width: 100%;
   height: 100%;
   padding: 0 20%;
-  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .wrap #two .calender-wrap {
@@ -203,8 +223,11 @@ body {
 .wrap #two .box {
   width: 180px;
   height: 300px;
+  background: -webkit-radial-gradient(top, circle, transparent 15%, white 16%);
+  background: -o-radial-gradient(top, circle, transparent 15%, white 16%);
   background: radial-gradient(circle at top, transparent 15%, white 16%);
   border-radius: 0 0 10px 10px;
+  -webkit-filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.6));
   filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.6));
 }
 .wrap #two #section2 h1 {
@@ -277,17 +300,31 @@ body {
   height: 2px;
   margin-left: 100px;
   margin-top: 18px;
+  -webkit-animation-name: expand;
   animation-name: expand;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   background: #c2c1c1;
 }
 .wrap #three #section3 div:first-child div {
+  -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s;
+  -webkit-animation-duration: 1.2s;
   animation-duration: 1.2s;
 }
 .wrap #three #section3 div:nth-child(2) div {
+  -webkit-animation-delay: 4.2s;
   animation-delay: 4.2s;
+  -webkit-animation-duration: 1.2s;
   animation-duration: 1.2s;
+}
+@-webkit-keyframes expand {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 290px;
+  }
 }
 @keyframes expand {
   0% {
@@ -321,9 +358,11 @@ body {
   text-transform: none;
 }
 .wrap #three .fadeInDown {
+  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 .wrap #three .fadeInUp {
+  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 
@@ -409,25 +448,51 @@ body {
   margin-top: -8px;
 }
 .wrap #four .zoomIn {
+  -webkit-animation-delay: 1.5s;
   animation-delay: 1.5s;
 }
 .wrap #four .fadeInDown {
+  -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s;
 }
 .wrap #four .fadeInUp {
+  -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s;
 }
 .wrap #four #section4 img {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
   transform: scale(0);
-  animation: zoomin 0.5s;
+  -webkit-animation-name: zoomin;
+  animation-name: zoomin;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
-@keyframes zoomin {
+@-webkit-keyframes zoomin {
   0% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
     transform: scale(0);
   }
   100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes zoomin {
+  0% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -452,7 +517,9 @@ body {
   width: 80%;
   left: 13%;
   margin-top: 6%;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   list-style: none;
   text-align: left;
@@ -509,15 +576,19 @@ body {
   background: black;
 }
 .wrap #five .bounceInLeft {
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 .wrap #five .bounceInRight {
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 .wrap #five .bounceInUp {
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 .wrap #five .bounceInDown {
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 
@@ -542,7 +613,9 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   background: red;
 }
@@ -552,7 +625,9 @@ body {
 }
 .wrap #six ul {
   position: relative;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   padding: 0;
 }
@@ -580,24 +655,48 @@ body {
   background: #220054;
 }
 .wrap #six #section6 h2 {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
   transform: scale(0);
-  animation-name: zoomin;
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
+  -webkit-animation-name: zoomin;
+  animation-name: zoomin;
+  -webkit-animation-duration: 1s;
   animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
-@keyframes zoomin {
+@-webkit-keyframes zoomin {
   0% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
     transform: scale(0);
   }
   100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes zoomin {
+  0% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
     transform: scale(1);
   }
 }
 .wrap #six .bounceInLeft {
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 .wrap #six .bounceInRight {
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 
